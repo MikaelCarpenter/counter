@@ -44,8 +44,6 @@ const Home: NextPage = () => {
     counterProgram: anchor.Program,
     wallet: AnchorWallet
   ) => {
-    // cant .fetch because that requires a pubkey of an account i'm fetching
-    // it can't fetch any account related to my wallet, I have to use a filter for that
     const [counter] = await counterProgram.account.counter.all([
       {
         memcmp: {
